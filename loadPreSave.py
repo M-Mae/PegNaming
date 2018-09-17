@@ -8,6 +8,7 @@ import InterruptionMain as IM
 import checkFileLocation as CFL
 reload(CFL)
 import directoryMain
+import maya.cmds as cmds
 #check local list of directories
 
 
@@ -34,7 +35,9 @@ def load(*args):
                 # if things weren't right then we need to open the UI to tell the user that
                 cmds.file(rename='TEMP.ma')
                 if popWantBool is False:
-                    print("This name has one or more formatting errors, they are as follows: " + str(validateResult));
+                    errorMessage = "This name has one or more formatting errors, they are as follows: " + str(validateResult)
+                    om.MGlobal.displayError(errorMessage)
+                    cmds.evalDeferred('om.MGlobal.displayError("This name has one or more formatting errors, check log! Click on semicolon to the right of this line.")');
                 else:
                     IM.makeInterruptSaveWidgetMain(desiredName=stringName);
             if type(validateResult) is NoneType:
