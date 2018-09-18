@@ -18,7 +18,7 @@ popWantBool = True;
 #can now use file validation function in the before save callback.
 def load(*args):
     def onSave(*args):
-        dir = CFL.getDirectory()
+        dir = CFL.getFile("Directory")
         if len(dir)< 1:
             directoryMain.makeDirectoryWidgetMain()
         currentLocation = cmds.file(q=True, loc=True)

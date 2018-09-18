@@ -16,7 +16,8 @@ class directoryWidget(QtWidgets.QWidget):
         self.ui = cDL.Ui_Form()
         self.ui.setupUi(self)
 
-        currentDirectory = CFL.getDirectory()
+        #currentDirectory = CFL.getDirectory()
+        currentDirectory = CFL.getFile("Directory")
         self.ui.directoriesTextBrowser.setText('\n'.join(str(result) for result in currentDirectory))
 
         #making slot for add button
@@ -26,9 +27,9 @@ class directoryWidget(QtWidgets.QWidget):
             newPath = self.ui.lineEdit.text()
             newPath = cleanPath(newPath)
             print(newPath)
-            currentDirectory = CFL.getDirectory()
-            CFL.addToDirectory(currentDirectory,newLocation=newPath)
-            currentDirectory = CFL.getDirectory()
+            currentDirectory = CFL.getFile("Directory")
+            CFL.addToList(currentDirectory,newListItem=newPath,type="Directory")
+            currentDirectory = CFL.getFile("Directory")
             self.ui.directoriesTextBrowser.setText('\n'.join(str(result) for result in currentDirectory))
 
         # making slot for delete button
@@ -38,9 +39,9 @@ class directoryWidget(QtWidgets.QWidget):
             newPath = self.ui.lineEdit.text()
             newPath = cleanPath(newPath)
             print(newPath)
-            currentDirectory = CFL.getDirectory()
-            CFL.subFromDirectory( currentDirectory ,badLocation=newPath)
-            currentDirectory = CFL.getDirectory()
+            currentDirectory = CFL.getFile("Directory")
+            CFL.subFromList( currentDirectory ,newListItem=newPath,type="Directory")
+            currentDirectory = CFL.getFile("Directory")
             self.ui.directoriesTextBrowser.setText('\n'.join(str(result) for result in currentDirectory))
         #making slot for help button
         @QtCore.Slot(name='clickedHelp')

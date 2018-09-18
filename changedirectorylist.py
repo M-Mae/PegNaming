@@ -47,7 +47,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QtWidgets.QApplication.translate("Form", "Form", None, -1))
-        self.label.setText(QtWidgets.QApplication.translate("Form", "Here\'s the list of places that you\'re okay with having controlled file names! Add or subtract from this list as you please, come back and edit at anytime! ", None, -1))
+        self.label.setText(QtWidgets.QApplication.translate("Form", "Here\'s the list of places that you\'re okay with having controlled file names! Add or subtract from this list as you please, come back and edit at anytime! NOTE: These locations should NEVER have spaces in them!", None, -1))
         self.lineEdit.setPlaceholderText(QtWidgets.QApplication.translate("Form", "Hey! add a file path here! ", None, -1))
         self.addButton.setText(QtWidgets.QApplication.translate("Form", "Add Path!", None, -1))
         self.helpButton.setText(QtWidgets.QApplication.translate("Form", "HELP!", None, -1))
