@@ -1,0 +1,10 @@
+modeling
+texturing
+rigging
+ready
+animation
+anim
+model
+tex
+rig
+other

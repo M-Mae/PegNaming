@@ -1,5 +1,6 @@
 import re
 from types import *
+import checkFileLocation as CFL
 #Validating a file name
 # must be a four part name
 # with specific values in parts 2, 3, and 4
@@ -8,11 +9,13 @@ descList = [
     "character", "char", "characters", "chars",
     "prop", "set", "item", "environment", "envir", "other"
 ];
+descList = CFL.getFile("DescriptionList")
 
 stateList = [
     "modeling", "texturing", "rigging", "ready",
     "animation", "anim", "rig", "other"
 ];
+stateList = CFL.getFile("StateList")
 
 versionList = [
     "version", "v", "ver"
@@ -47,11 +50,11 @@ def validateFileName(name):
         #print(str(i));
         # to do replace with string formatting
         # take Description[part 2] from the name and compare against the description list.
-        if i is 1 and str(nameParts[1]).lower() not in descList:
-            results.append("Part two of your name must be one of the following: " + str(descList));
+        if i is 1 and str(nameParts[1]).lower() not in CFL.getFile("DescriptionList"):
+            results.append("Part two of your name must be one of the following: " + str(CFL.getFile("DescriptionList")));
         # take State from the name and compare against the state list.
-        elif i is 2 and str(nameParts[2]).lower() not in stateList:
-            results.append("Part three of your name must be one of the following: " + str(stateList));
+        elif i is 2 and str(nameParts[2]).lower() not in CFL.getFile("StateList"):
+            results.append("Part three of your name must be one of the following: " + str(CFL.getFile("StateList")));
         elif i is 3:
             #taking off the .ma at the end of the file name by splitting it and never using the second part
             version = str(nameParts[3]).split(".")

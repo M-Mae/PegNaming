@@ -1,0 +1,10 @@
+character
+char
+characters
+prop
+set
+item
+environment
+envir
+other
+interactable
