@@ -13,4 +13,6 @@ Then restart maya, and it might take a small bit longer to compile the code the 
 
 After that it should be just fine, open and use maya like normal. 
 
+In the new shelf named Custom Scripts, click the PEG button to configure the settings
+
 It will only trigger if you try to use names that are not allowed. 
