@@ -1,5 +1,7 @@
 Setup info
 
+PEG- a tool for helping studios or teams PEG down their naming conventions and protect from human error
+
 Unzip this package.
 Take all files out of the folder and copy paste into this location:
 
